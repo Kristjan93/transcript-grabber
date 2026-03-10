@@ -1,29 +1,24 @@
 # YouTube Transcript Downloader
 
-Interactive CLI tool that downloads auto-generated YouTube subtitles and converts them into clean, timestamped text transcripts. Designed for batch-downloading transcripts organized by group.
+Interactive CLI tool that downloads auto-generated YouTube subtitles and converts them into timestamped text transcripts, organized by group.
 
-## Setup
+## Why YouTube?
 
-Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
+
+
+## Requirements
+
+- Python 3.12+
+- [uv](https://docs.astral.sh/uv/)
+
+## Getting started
 
 ```bash
-git clone <repo-url>
-cd youtube-transcript
 uv sync
-```
-
-## Usage
-
-```bash
 uv run python main.py
 ```
 
-The script will interactively ask you for:
-
-1. **Group name** — a label for this group of videos (e.g. a lecture series, event, or topic). This becomes the folder name.
-2. **YouTube URLs** — paste one URL per line. Press Enter on an empty line when done.
-
-### Example session
+## Example
 
 ```
 === YouTube Transcript Downloader ===
@@ -48,17 +43,9 @@ Processing 1 video(s)...
 All done! Transcripts saved to: transcripts/9-februar-fraedsla/
 ```
 
-### Output
+### Output format
 
-This produces a single timestamped transcript file:
-
-```
-transcripts/
-  9-februar-fraedsla/
-    landvardanamskeid-fraedsla-sem-upplysingagjof-og-stjorntaeki.txt
-```
-
-Each line in the transcript has a timestamp and the spoken text:
+Each line has a timestamp and the spoken text:
 
 ```
 [0:02] níum níu settingi þannig að þetta er
@@ -68,15 +55,10 @@ Each line in the transcript has a timestamp and the spoken text:
 ...
 ```
 
-## File structure
+### File structure
 
 ```
 transcripts/
   <group-slug>/
     <video-slug>.txt
-    <video-slug>.txt
 ```
-
-- **Group** is your provided name, slugified into a folder
-- **Video** files are named from the YouTube video title, slugified
-- Default subtitle language is Icelandic (`is`)
