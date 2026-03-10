@@ -2,10 +2,6 @@
 
 Interactive CLI tool that downloads auto-generated YouTube subtitles and converts them into timestamped text transcripts, organized by group.
 
-## Why YouTube?
-
-
-
 ## Requirements
 
 - Python 3.12+
